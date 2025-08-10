@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccgnuki874pvu"]
+
+[ext_resource type="Script" uid="uid://dscggo5xb1l" path="res://ObjectScenes/Fruit/FruitScripts/hud.gd" id="1_p37ec"]
+[ext_resource type="Texture2D" uid="uid://dwh5bewa07n0e" path="res://Assets/Objects/Cherries.png" id="1_xyxvg"]
+[ext_resource type="FontFile" uid="uid://lrgpcpeu2qi4" path="res://Assets/Fonts/NokiaCellphoneFC.ttf" id="2_kl7uq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl7uq"]
+atlas = ExtResource("1_xyxvg")
+region = Rect2(6.39587, 4.80594, 19.8074, 23.9055)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_p37ec")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 50.0
+offset_bottom = 50.0
+texture = SubResource("AtlasTexture_kl7uq")
+
+[node name="X" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 18.0
+offset_right = 62.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("2_kl7uq")
+text = "X"
+
+[node name="Contador" type="Label" parent="."]
+offset_left = 65.0
+offset_top = 13.0
+offset_right = 84.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("2_kl7uq")
+theme_override_font_sizes/font_size = 25
+text = "0"

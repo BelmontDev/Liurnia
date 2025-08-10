@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Liurnia"
-run/main_scene="uid://b0susska4ikcr"
+run/main_scene="uid://be4jr4vl3bosa"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,11 @@ window/size/viewport_height=270
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+Player=""
+Enemy=""
 
 [rendering]
 
