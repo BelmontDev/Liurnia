@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6xnrxtlflb44"
-path="res://.godot/imported/Jump_KG_1.png-3b03a3f97916e0f29da6f9dc145142a6.ctex"
+uid="uid://c11fljww5lvwc"
+path="res://.godot/imported/Jump_OF.png-bb8703e0a1a7f93805846f2b51cbfb7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Knight_player/Jump_KG_1.png"
-dest_files=["res://.godot/imported/Jump_KG_1.png-3b03a3f97916e0f29da6f9dc145142a6.ctex"]
+source_file="res://Assets/Player/Knight_player/Jump_OF.png"
+dest_files=["res://.godot/imported/Jump_OF.png-bb8703e0a1a7f93805846f2b51cbfb7a.ctex"]
 
 [params]
 
