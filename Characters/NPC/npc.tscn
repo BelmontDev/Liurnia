@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0yux3amg6yh1"]
+[gd_scene load_steps=13 format=3 uid="uid://d0yux3amg6yh1"]
 
 [ext_resource type="Script" uid="uid://cg3000bkha5ee" path="res://Characters/NPC/NPCscripts/ciud.gd" id="1_gxby5"]
 [ext_resource type="Texture2D" uid="uid://2kfluswa0fca" path="res://Assets/NPC/BLACKSMITH.png" id="2_ndadm"]
+[ext_resource type="FontFile" uid="uid://lrgpcpeu2qi4" path="res://Assets/Fonts/NokiaCellphoneFC.ttf" id="2_uig3q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxby5"]
 atlas = ExtResource("2_ndadm")
@@ -71,6 +72,7 @@ offset_left = 27.0
 offset_top = -36.0
 offset_right = 183.0
 offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("2_uig3q")
 autowrap_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

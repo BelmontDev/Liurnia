@@ -95,7 +95,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dju1k"]
-size = Vector2(33, 61)
+size = Vector2(33, 60)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_kbv8i")
@@ -106,7 +106,7 @@ animation = &"Idle"
 frame_progress = 0.126676
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 1.5)
+position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_dju1k")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed := 150  
 var direccion := 0.0  
-var jump := 300  
+var jump := 350  
 var cherry := 0
 
 const gravity := 10  

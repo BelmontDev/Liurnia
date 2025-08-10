@@ -123,7 +123,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmuhc"]
-size = Vector2(30, 35)
+size = Vector2(30, 34)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_kmuhc")
@@ -135,5 +135,5 @@ frame = 3
 frame_progress = 0.97693
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 14.5)
+position = Vector2(-1, 15)
 shape = SubResource("RectangleShape2D_kmuhc")
