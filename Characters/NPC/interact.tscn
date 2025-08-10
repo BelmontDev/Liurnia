@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://boejepuocscpr"]
+
+[ext_resource type="Script" uid="uid://yanw8m2ybbgu" path="res://Characters/NPC/NPCscripts/interact.gd" id="1_7n8s3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2quoi"]
+
+[node name="Interact" type="CanvasLayer"]
+script = ExtResource("1_7n8s3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -480.0
+offset_right = -440.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_2quoi")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -52.0
+offset_right = 1.0
+offset_bottom = -3.0
+text = "Press E 
+To Interact"

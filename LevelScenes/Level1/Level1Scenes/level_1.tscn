@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://be4jr4vl3bosa"]
+[gd_scene load_steps=17 format=4 uid="uid://be4jr4vl3bosa"]
 
+[ext_resource type="PackedScene" uid="uid://cminiiviar6uf" path="res://ObjectScenes/Checkpoint/checkpoint.tscn" id="1_duqsi"]
 [ext_resource type="PackedScene" uid="uid://b0susska4ikcr" path="res://Characters/MainCharacterScene/player.tscn" id="1_l5my8"]
+[ext_resource type="Script" uid="uid://brwqj72uvg3jx" path="res://npc.gd" id="1_qhkgv"]
 [ext_resource type="Script" uid="uid://c33fioha4n4il" path="res://LevelScenes/Level1/Level1Scenes/fall_zone.gd" id="2_2rckj"]
+[ext_resource type="PackedScene" uid="uid://d0yux3amg6yh1" path="res://Characters/NPC/npc.tscn" id="2_8b6mu"]
 [ext_resource type="Texture2D" uid="uid://c3gpvn8via22n" path="res://Assets/Ground/TX Tileset Ground.png" id="3_y63c2"]
 [ext_resource type="PackedScene" uid="uid://do6787nfhhg5o" path="res://ObjectScenes/Fruit/cherry.tscn" id="4_2rckj"]
 [ext_resource type="PackedScene" uid="uid://ccgnuki874pvu" path="res://ObjectScenes/Fruit/hud.tscn" id="5_y63c2"]
@@ -824,6 +827,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vy2cd")
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_qhkgv")
+
+[node name="Checkpoint" parent="." instance=ExtResource("1_duqsi")]
+position = Vector2(1158, 144)
+scale = Vector2(1.21962, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("6_8ljhj")]
 position = Vector2(805, 144)
@@ -851,6 +859,9 @@ position = Vector2(817, 95)
 [node name="HUD" parent="." instance=ExtResource("5_y63c2")]
 unique_name_in_owner = true
 
+[node name="NPC" parent="." instance=ExtResource("2_8b6mu")]
+position = Vector2(530, 144)
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -858,7 +869,7 @@ motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(704, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(139, 110)
+position = Vector2(422, -396)
 scale = Vector2(1.22222, 1.34568)
 texture = ExtResource("7_7fxds")
 
@@ -867,7 +878,7 @@ motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(580, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(95.5, 64)
+position = Vector2(-132, 30)
 scale = Vector2(1.07118, 1)
 texture = ExtResource("8_duqsi")
 
@@ -881,6 +892,7 @@ scale = Vector2(1.22222, 1)
 texture = ExtResource("9_wdkpl")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-195, -570)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(704, 0)
 
