@@ -48,6 +48,6 @@ Breve reflexión sobre la experiencia de desarrollo:
 ---
 
 ## 📌 Créditos
-Incluye tu nombre y, si corresponde, el de otros colaboradores, así como las fuentes de recursos externos usados.
+Gilberto Lomeli Ulloa. 
 
 ---
