@@ -55,8 +55,8 @@
 
 ## 🎥 **¡Mira Liurnia en acción!**  
 
-- ▶️ [Gameplay Básico - Explora, salta y recolecta](#)  
-- ▶️ [Sistema de Guardado & Menú de Pausa en vivo](#)  
+- ▶️ - 🎥 [Gameplay](Assets/Videos/1lol.mp4)  
+- 🎥 [Guardado y NPC](Assets/Videos/2lol.mp4)
 
 ---
 
