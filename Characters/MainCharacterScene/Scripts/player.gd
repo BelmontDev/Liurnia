@@ -1,6 +1,6 @@
 extends CharacterBody2D  
 
-var speed := 150  
+@export var speed := 150
 var direccion := 0.0  
 var jump := 350  
 const gravity := 10  
@@ -8,7 +8,7 @@ const gravity := 10
 @onready var anim := $AnimatedSprite2D  
 @onready var jump_sound := $JumpSound
 @onready var collect_sound := $RespawnSound
-@onready var hud = null
+@onready var hud = get_tree().current_scene.get_node("HUD")
 
 var was_on_floor := false  
 var landing_timer := 0.0  
@@ -67,23 +67,22 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta):
-	if Input.is_action_just_pressed("save_game"):
-		save_position()
-	if Input.is_action_just_pressed("load_game"):
-		load_position()
-
+	if Input.is_action_just_pressed("save_game"):  # Q para guardar
+		SaveManager.save_game(global_position)
+	elif Input.is_action_just_pressed("load_game"):  # R para cargar
+		if SaveManager.has_save():
+				global_position = SaveManager.load_game()
+		
+		
 func save_position():
-	SaveManager.save_game(global_position, Global.cherries)
-	print("Juego guardado!")
+	SaveManager.save_game(global_position)
+	print("Posición guardada!")
 
 func load_position():
 	if SaveManager.has_save():
-		var save_data = SaveManager.load_game()
-		if save_data.has("position") and save_data.has("cherries"):
-			global_position = save_data["position"]
-			Global.cherries = save_data["cherries"]
-			if hud:
-				hud.update_count(Global.cherries)
-			print("Juego cargado!")
-	else:
-		print("No hay partida guardada.")
+		var data = SaveManager.load_game()
+		if "position" in data:
+			global_position = data["position"]
+			print("Posición cargada!")
+		else:
+			print("No hay partida guardada.")
