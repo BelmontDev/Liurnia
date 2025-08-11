@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c675o0fuabnr6"]
+[gd_scene load_steps=5 format=3 uid="uid://c675o0fuabnr6"]
 
 [ext_resource type="Script" uid="uid://dfj73gssnw37a" path="res://LevelScenes/Level2/Level2Scripts/finish.gd" id="1_76ng6"]
 [ext_resource type="Texture2D" uid="uid://bjhx5s0qkhey0" path="res://Assets/Objects/Checkpoint (Flag Idle)(64x64).png" id="2_vs002"]
+[ext_resource type="FontFile" uid="uid://lrgpcpeu2qi4" path="res://Assets/Fonts/NokiaCellphoneFC.ttf" id="3_vs002"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pm01"]
 size = Vector2(33, 46)
@@ -16,3 +17,11 @@ hframes = 10
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 9)
 shape = SubResource("RectangleShape2D_2pm01")
+
+[node name="Advice" type="Label" parent="."]
+offset_left = 26.0
+offset_top = -30.0
+offset_right = 128.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("3_vs002")
+autowrap_mode = 3
