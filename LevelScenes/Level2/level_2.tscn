@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://drbt48c5fe6gf"]
+[gd_scene load_steps=15 format=4 uid="uid://drbt48c5fe6gf"]
 
 [ext_resource type="PackedScene" uid="uid://b0susska4ikcr" path="res://Characters/MainCharacterScene/player.tscn" id="1_2ij6v"]
+[ext_resource type="Script" uid="uid://c44t11oulkm1q" path="res://LevelScenes/Level2/Level2Scripts/level_2.gd" id="1_ghlnu"]
 [ext_resource type="Texture2D" uid="uid://c3gpvn8via22n" path="res://Assets/Ground/TX Tileset Ground.png" id="2_q23im"]
 [ext_resource type="AudioStream" uid="uid://l13f0ps65751" path="res://Assets/Sounds/1. Moonspire.wav" id="3_q23im"]
 [ext_resource type="PackedScene" uid="uid://do6787nfhhg5o" path="res://ObjectScenes/Fruit/cherry.tscn" id="4_47hp2"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cg8sdjqwsypld" path="res://LevelScenes/Level2/Level2Scripts/fallout.gd" id="7_cuvv1"]
 [ext_resource type="PackedScene" uid="uid://c675o0fuabnr6" path="res://LevelScenes/Level2/finish.tscn" id="8_m4hpb"]
 [ext_resource type="Texture2D" uid="uid://rxrto2xg3wmw" path="res://Assets/Background/Background.png" id="9_regfo"]
+[ext_resource type="PackedScene" uid="uid://crww7mkdn8it1" path="res://ObjectScenes/SMenu/pause_menu.tscn" id="10_5nevq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qkxac"]
 texture = ExtResource("2_q23im")
@@ -844,6 +846,7 @@ sources/0 = SubResource("TileSetAtlasSource_qkxac")
 size = Vector2(4833, 114)
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_ghlnu")
 
 [node name="Player" parent="." instance=ExtResource("1_2ij6v")]
 position = Vector2(123, 19)
@@ -897,3 +900,6 @@ position = Vector2(-36, -234)
 scale = Vector2(1.02155, 0.697982)
 texture = ExtResource("9_regfo")
 centered = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_5nevq")]
+visible = false
