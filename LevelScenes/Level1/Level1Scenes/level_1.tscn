@@ -861,6 +861,41 @@ position = Vector2(530, 146)
 [node name="Player" parent="." instance=ExtResource("1_l5my8")]
 position = Vector2(49, 103)
 
+[node name="Stop" type="Control" parent="Player"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 56.0
+offset_top = -103.0
+offset_right = 220.0
+offset_bottom = -18.0
+script = ExtResource("12_wdkpl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/Stop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 2.312
+anchor_bottom = 2.312
+offset_left = -108.0
+offset_top = -107.98
+offset_right = 148.0
+offset_bottom = -36.98
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="button" type="Button" parent="Player/Stop/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pause
+"
+
+[node name="Save" type="Button" parent="Player/Stop/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save Game
+"
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -876,33 +911,6 @@ texture = ExtResource("10_7fxds")
 stream = ExtResource("11_duqsi")
 autoplay = true
 
-[node name="Stop" type="Control" parent="."]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 105.0
-offset_right = 269.0
-offset_bottom = 85.0
-script = ExtResource("12_wdkpl")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Stop"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 2.312
-anchor_bottom = 2.312
-offset_left = -108.0
-offset_top = -107.98
-offset_right = 148.0
-offset_bottom = -36.98
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="button" type="Button" parent="Stop/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Pause
-"
-
 [connection signal="body_entered" from="FallZone" to="FallZone" method="_on_body_entered"]
-[connection signal="pressed" from="Stop/VBoxContainer/button" to="Stop" method="pause_or_unpause"]
+[connection signal="pressed" from="Player/Stop/VBoxContainer/button" to="Player/Stop" method="pause_or_unpause"]
+[connection signal="pressed" from="Player/Stop/VBoxContainer/Save" to="Player/Stop" method="save_game"]
