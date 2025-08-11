@@ -15,20 +15,19 @@ var landing_timer := 0.0
 var landing_duration := 0.2  
 
 var cherries := 0
-@onready var hud = null
+var hud = null
 
 func _ready():
 	hud = get_tree().current_scene.get_node("HUD")
-	cherries = Global.cherries
 	if hud:
 		hud.update_count(cherries)
+	# No carga partida aquí, solo al presionar 'R'
 
 func add_coin(amount: int):
 	cherries += amount
-	Global.cherries = cherries
 	if hud:
 		hud.update_count(cherries)
-		collect_sound.play()
+	collect_sound.play()
 
 func die():
 	get_tree().reload_current_scene()
@@ -79,3 +78,25 @@ func _physics_process(delta: float) -> void:
 	was_on_floor = is_on_floor()
 
 	move_and_slide()
+
+func _process(delta):
+	if Input.is_action_just_pressed("save_game"):  # Q para guardar
+		save_position()
+	if Input.is_action_just_pressed("load_game"):  # R para cargar
+		load_position()
+
+func save_position():
+	SaveManager.save_game(global_position, cherries)
+	print("Juego guardado!")
+
+func load_position():
+	if SaveManager.has_save():
+		var save_data = SaveManager.load_game()
+		if save_data.has("position") and save_data.has("cherries"):
+			global_position = save_data["position"]
+			cherries = save_data["cherries"]
+			if hud:
+				hud.update_count(cherries)
+			print("Juego cargado!")
+	else:
+		print("No hay partida guardada.")
