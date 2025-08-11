@@ -55,8 +55,8 @@
 
 ## 🎥 **¡Mira Liurnia en acción!**  
 
-- ▶️ - 🎥 [Gameplay](Assets/Videos/1lol.mp4)  
-- 🎥 [Guardado y NPC](Assets/Videos/2lol.mp4)
+- ▶️ [Gameplay](Assets/Videos/1lol.mp4)  
+- 🎥 [Guardado y NPC´s](Assets/Videos/2lol.mp4)
 
 ---
 
