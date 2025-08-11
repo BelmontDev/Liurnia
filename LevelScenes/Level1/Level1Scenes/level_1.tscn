@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://be4jr4vl3bosa"]
+[gd_scene load_steps=15 format=4 uid="uid://be4jr4vl3bosa"]
 
 [ext_resource type="PackedScene" uid="uid://cminiiviar6uf" path="res://ObjectScenes/Checkpoint/checkpoint.tscn" id="1_duqsi"]
 [ext_resource type="PackedScene" uid="uid://b0susska4ikcr" path="res://Characters/MainCharacterScene/player.tscn" id="1_l5my8"]
-[ext_resource type="Script" uid="uid://brwqj72uvg3jx" path="res://npc.gd" id="1_qhkgv"]
+[ext_resource type="Script" uid="uid://dejcplfa8d5cd" path="res://LevelScenes/Level1/Level1Scenes/Global.gd" id="1_wdkpl"]
 [ext_resource type="Script" uid="uid://c33fioha4n4il" path="res://LevelScenes/Level1/Level1Scenes/fall_zone.gd" id="2_2rckj"]
 [ext_resource type="PackedScene" uid="uid://d0yux3amg6yh1" path="res://Characters/NPC/npc.tscn" id="2_8b6mu"]
 [ext_resource type="Texture2D" uid="uid://c3gpvn8via22n" path="res://Assets/Ground/TX Tileset Ground.png" id="3_y63c2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ccgnuki874pvu" path="res://ObjectScenes/Fruit/hud.tscn" id="5_y63c2"]
 [ext_resource type="PackedScene" uid="uid://cp2iephwl52rl" path="res://Characters/Enemy/enemy.tscn" id="6_8ljhj"]
 [ext_resource type="Texture2D" uid="uid://c5m67enm4ffb7" path="res://Assets/Background/nature_4/orig.png" id="10_7fxds"]
+[ext_resource type="AudioStream" uid="uid://xv0uy2je7r8j" path="res://Assets/Sounds/3. Darkwood Path.wav" id="11_duqsi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30248"]
 size = Vector2(2806, 181)
@@ -824,7 +825,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vy2cd")
 
 [node name="Level1" type="Node2D"]
-script = ExtResource("1_qhkgv")
+script = ExtResource("1_wdkpl")
 
 [node name="Checkpoint" parent="." instance=ExtResource("1_duqsi")]
 position = Vector2(1158, 144)
@@ -869,5 +870,9 @@ motion_mirroring = Vector2(689, 0)
 position = Vector2(134, 104)
 scale = Vector2(1.19618, 1.32716)
 texture = ExtResource("10_7fxds")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_duqsi")
+autoplay = true
 
 [connection signal="body_entered" from="FallZone" to="FallZone" method="_on_body_entered"]

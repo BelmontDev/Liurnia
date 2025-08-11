@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c675o0fuabnr6"]
+
+[ext_resource type="Script" uid="uid://dfj73gssnw37a" path="res://LevelScenes/Level2/Level2Scripts/finish.gd" id="1_76ng6"]
+[ext_resource type="Texture2D" uid="uid://bjhx5s0qkhey0" path="res://Assets/Objects/Checkpoint (Flag Idle)(64x64).png" id="2_vs002"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pm01"]
+size = Vector2(33, 46)
+
+[node name="Finish" type="Area2D"]
+script = ExtResource("1_76ng6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vs002")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 9)
+shape = SubResource("RectangleShape2D_2pm01")
